@@ -1,0 +1,36 @@
+@using Chef_And_Dishes.Models
+@model Chef
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div>
+        <form action="addChef" method="post">
+            <span asp-validation-for="FirstName"></span>
+            <label asp-for="FirstName"></label>
+            <br>
+            <input asp-for="FirstName">
+            <br><br>
+            <span asp-validation-for="LastName"></span>
+            <label asp-for="LastName"></label>
+            <br>
+            <input asp-for="LastName">
+            <br><br>
+            <span asp-validation-for="DOB"></span>
+            <label asp-for="DOB"></label>
+            <br>
+            <input type="date" name="DOB" id="">
+            <br><br>
+            <input type="submit" value="Log in">
+        </form>
+        </div>
+    </div>
+</body>
+</html>

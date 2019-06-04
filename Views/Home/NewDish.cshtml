@@ -1,0 +1,51 @@
+@using Chef_And_Dishes.Models
+@model Dish
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div>
+        <form asp-action="AddDish" method="post">
+            <span asp-validation-for="Name"></span>
+            <label asp-for="Name"></label>
+            <br>
+            <input asp-for="Name">
+            <br><br>
+            <span asp-validation-for="Calories"></span>
+            <label asp-for="Calories"></label>
+            <br>
+            <input asp-for="Calories">
+            <br><br>
+            <span asp-validation-for="Tastiness"></span>
+            <label asp-for="Tastiness"></label>
+            <br>
+            <input asp-for="Tastiness">
+            <br><br>
+            <span asp-validation-for="Description"></span>
+            <label asp-for="Description"></label>
+            <br>
+            <input asp-for="Description">
+            <br><br>
+            <span asp-validation-for="ChefId"></span>
+            <label asp-for="ChefId"></label>
+            <br>
+            <select name="ChefId" id="">
+                @foreach (var c in @ViewBag.AllChef)
+                {
+                <option value="@c.UserId">@c.FirstName @c.LastName </option>
+                }
+            </select>
+            <br><br>
+            <input type="submit" value="Add Dish">
+        </form>
+        </div>
+    </div>
+</body>
+</html>
